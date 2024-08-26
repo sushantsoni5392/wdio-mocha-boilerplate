@@ -25,8 +25,13 @@ export const config = {
     logLevel: 'trace',
     framework: 'mocha',
     outputDir: __dirname,
+    hostname: 'moon.qa',
+    port: 443,
+    path: '/wd/hub/',
+    protocol: 'https',
+    runner: 'local',
 
-    reporters: ['spec', 'dot', 'junit',
+    reporters: ['spec', 'junit',
         [
             'allure',
             {
