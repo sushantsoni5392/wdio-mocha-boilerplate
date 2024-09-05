@@ -9,28 +9,31 @@ export const config = {
      * specify test files
      */
     specs: [
-        './mocha.test.js'
+        './mocha.test.ts'
     ],
 
     /**
      * capabilities
      */
     capabilities: [{
-        browserName: 'chrome'
+        browserName: 'chrome',
+        'bstack:options' : {
+            seleniumBidi: true,
+            seleniumVersion: '4.23.0',
+        }
     }],
 
     /**
      * test configurations
      */
-    logLevel: 'trace',
+    // logLevel: 'trace',
     framework: 'mocha',
     outputDir: __dirname,
-    hostname: 'moon.qa',
-    port: 443,
-    path: '/wd/hub/',
-    protocol: 'https',
+    user: 'xxxx',
+    key: 'xxxx',
+    hostname: 'hub.browserstack.com',
     runner: 'local',
-
+    logLevel: 'trace',
     reporters: ['spec', 'junit',
         [
             'allure',
@@ -41,7 +44,12 @@ export const config = {
             },
         ],
     ],
-
+    services: [
+        [
+          'browserstack',
+          { browserstackLocal: true, opts: { forceLocal: false } },
+        ],
+      ],
     mochaOpts: {
         ui: 'bdd',
         timeout: 15000
@@ -52,7 +60,7 @@ export const config = {
      */
     onPrepare: function() {
         // eslint-disable-next-line
-        console.log('let\'s go')
+        console.log('let\'s go00oooooooooooooo')
     },
     afterTest: async function(test, context, { error, result, duration, passed, retries }) {
         if (error)

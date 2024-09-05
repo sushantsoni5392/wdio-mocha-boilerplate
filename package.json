@@ -1,7 +1,7 @@
 {
   "type": "module",
   "dependencies": {
-   "@wdio/allure-reporter": "9.0.4",
+    "@wdio/allure-reporter": "9.0.4",
     "@wdio/cli": "9.0.7",
     "@wdio/globals": "9.0.7",
     "@wdio/junit-reporter": "9.0.4",
@@ -10,5 +10,8 @@
     "@wdio/spec-reporter": "9.0.7",
     "@wdio/types": "9.0.4",
     "allure-commandline": "~2.24.0"
+  },
+  "devDependencies": {
+    "@wdio/browserstack-service": "^9.0.7"
   }
 }
